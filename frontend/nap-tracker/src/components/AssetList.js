@@ -9,7 +9,7 @@ const assert = [
     { name: 'Nickel', category: 'Base metals', price: 8, trend: 'Falling', date: '2025-01-20' },
 ];
 
-const AssetList = () => (
+const AssetList = ({ onEdit, onDelete }) => (
     <div className='mt-4'>
         <h5>Asset List</h5>
         <table className="table table-striped">
@@ -20,6 +20,7 @@ const AssetList = () => (
                     <th>Current Price</th>
                     <th>Trend</th>
                     <th>Last Updated</th>
+                    <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
@@ -32,6 +33,14 @@ const AssetList = () => (
                         </td>
                         <td>{asset.trend}</td>
                         <td>{asset.date}</td>
+                        <td>
+                            <button className="btn btn-sm btn-outline-primary me-2" onClick={() => onEdit(asset)}>
+                                Edit
+                            </button>
+                            <button className="btn btn-sm btn-outline-danger" onClick={() => onDelete(asset)}>
+                                Delete
+                            </button>
+                        </td>
                     </tr>
                 ))}
             </tbody>
