@@ -5,20 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="db6db86d-22bb-4b42-a54c-3f16029ed5ea" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/own/naptracker/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/own/naptracker/controller/AssetController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/own/naptracker/controller/CategoryController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/own/naptracker/model/Asset.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/own/naptracker/model/Category.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/own/naptracker/repository/AssetRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/own/naptracker/repository/CategoryRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/own/naptracker/controller/AssetController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/own/naptracker/controller/AssetController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +39,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "<unknown>",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -71,7 +58,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1746095187017</updated>
-      <workItem from="1746095187794" duration="5967000" />
+      <workItem from="1746095187794" duration="8057000" />
     </task>
     <servers />
   </component>

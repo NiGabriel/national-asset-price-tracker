@@ -44,6 +44,10 @@ public class Asset {
         return category;
     }
 
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
     public void setPrice(BigDecimal price) {
         this.price = price;
     }
@@ -55,5 +59,4 @@ public class Asset {
     public void setUpdateAt(LocalDateTime updateAt) {
         this.updateAt = updateAt;
     }
-
 }
