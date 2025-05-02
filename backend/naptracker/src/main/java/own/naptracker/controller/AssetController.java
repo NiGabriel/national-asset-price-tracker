@@ -2,16 +2,15 @@ package own.naptracker.controller;
 
 import org.springframework.http.ResponseEntity;
 import own.naptracker.dto.AssetDTO;
-import own.naptracker.model.Asset;
-import own.naptracker.model.Log;
-import own.naptracker.model.User;
+import own.naptracker.model.*;
 import own.naptracker.repository.AssetRepository;
 import org.springframework.web.bind.annotation.*;
 import own.naptracker.repository.CategoryRepository;
-import own.naptracker.model.Category;
 import own.naptracker.repository.LogRepository;
 import org.springframework.security.core.Authentication;
+import own.naptracker.repository.PriceHistoryRepository;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Map;
 
@@ -26,11 +25,14 @@ public class AssetController {
 
     private final LogRepository logRepository;
 
+    private final PriceHistoryRepository priceHistoryRepository;
 
-    public AssetController(AssetRepository assetRepository, CategoryRepository categoryRepository, LogRepository logRepository) {
+
+    public AssetController(AssetRepository assetRepository, CategoryRepository categoryRepository, LogRepository logRepository, PriceHistoryRepository priceHistoryRepository) {
         this.assetRepository = assetRepository;
         this.categoryRepository = categoryRepository;
         this.logRepository = logRepository;
+        this.priceHistoryRepository = priceHistoryRepository;
     }
 
     @GetMapping
@@ -50,9 +52,16 @@ public class AssetController {
     }
 
     @GetMapping("/{id}")
-    public Asset getAssetById(@PathVariable Long id) {
-        return assetRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException(("Asset not found with ID: ") + id));
+    public ResponseEntity<?> getAssetById(@PathVariable Long id) {
+        Asset asset = assetRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Asset not found"));
+
+        List<PriceHistory> history = priceHistoryRepository.findByAssetIdOrderByRecordedAtDesc(id);
+
+        return ResponseEntity.ok(Map.of(
+                "asset", asset,
+                "latestHistory", history.isEmpty() ? null : history.get(0)
+        ));
     }
 
 
@@ -69,6 +78,13 @@ public class AssetController {
 
         //save
         assetRepository.save(asset);
+
+        PriceHistory priceHistory = new PriceHistory();
+        priceHistory.setAsset(asset);
+        priceHistory.setPrice(asset.getPrice());
+        priceHistory.setRecordedAt(LocalDateTime.now());
+
+        priceHistoryRepository.save(priceHistory);
 
 
         //Temporary mock user
@@ -103,6 +119,15 @@ public class AssetController {
         asset.setUpdateAt(assetDTO.getUpdatedAt());
 
         assetRepository.save(asset);
+
+        // Save price history
+        PriceHistory priceHistory = new PriceHistory();
+        priceHistory.setAsset(asset);
+        priceHistory.setPrice(asset.getPrice());
+        priceHistory.setRecordedAt(LocalDateTime.now());
+
+        priceHistoryRepository.save(priceHistory);
+
 
         User user = (User) authentication.getPrincipal();
 
