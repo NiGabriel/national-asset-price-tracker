@@ -13,6 +13,7 @@ public class User {
 
     private String username;
 
+    @Column(unique = true, nullable = false)
     private String email;
 
 
@@ -24,6 +25,10 @@ public class User {
 
     @OneToMany(mappedBy = "user")
     private List<Log> logs;
+
+
+    @Column(name = "totp_secret")
+    private String totpSecret;
 
     //Getters and Setters
 
@@ -74,5 +79,13 @@ public class User {
 
     public void setLogs(List<Log> logs) {
         this.logs = logs;
+    }
+
+    public String getTotpSecret() {
+        return totpSecret;
+    }
+
+    public void setTotpSecret(String totpSecret) {
+        this.totpSecret = totpSecret;
     }
 }

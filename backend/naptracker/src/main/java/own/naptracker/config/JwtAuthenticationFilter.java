@@ -5,6 +5,7 @@ import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -31,6 +32,9 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
     private final JwtUtil jwtUtil;
     private final UserRepository userRepository;
 
+    @Autowired
+    private TokenBlacklist tokenBlacklist;
+
     public JwtAuthenticationFilter(JwtUtil jwtUtil, UserRepository userRepository){
         this.jwtUtil = jwtUtil;
         this.userRepository = userRepository;
@@ -46,7 +50,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
             String username = jwtUtil.extractUsername(token);
 
             if (username != null && SecurityContextHolder.getContext().getAuthentication() == null){
-                if(jwtUtil.validateToken(token)){
+                if(jwtUtil.validateToken(token) && !tokenBlacklist.isTokenBlacklisted(token)){
                     User user = userRepository.findByUsername(username).orElse(null);
                     if(user != null){
                         UsernamePasswordAuthenticationToken auth = new UsernamePasswordAuthenticationToken(

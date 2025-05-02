@@ -35,4 +35,10 @@ public class JwtUtil {
             return false;
         }
     }
+
+    public Date getExpiration(String token) {
+        return Jwts.parserBuilder().setSigningKey(key).build()
+                .parseClaimsJws(token).getBody().getExpiration();
+    }
+
 }
