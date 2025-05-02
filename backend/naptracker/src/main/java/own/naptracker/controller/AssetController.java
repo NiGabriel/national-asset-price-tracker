@@ -57,7 +57,7 @@ public class AssetController {
 
 
     @PostMapping
-    public ResponseEntity<String> addAsset(@RequestBody AssetDTO assetDTO) {
+    public ResponseEntity<String> addAsset(@RequestBody AssetDTO assetDTO, Authentication authentication) {
         Category category = categoryRepository.findById(assetDTO.getCategoryId())
                 .orElseThrow(() -> new RuntimeException("Categroy not found"));
 
@@ -70,15 +70,15 @@ public class AssetController {
         //save
         assetRepository.save(asset);
 
-        Log log = new Log();
-
-        log.setAction("create");
-        log.setDescription("created asset: " + asset.getName());
-        log.setAsset(asset);
 
         //Temporary mock user
-        User user = new User();
-        user.setId(3L);
+        User user = (User) authentication.getPrincipal();
+
+        Log log = new Log();
+        log.setAction("create");
+        log.setDescription("created asset: " + asset.getName());
+        log.setRecordId(asset.getId());
+        log.setRecordType("asset");
         log.setUser(user);
 
         //save the log
@@ -90,7 +90,7 @@ public class AssetController {
 
     //Updating
     @PutMapping("/{id}")
-    public ResponseEntity<String> updateAsset(@PathVariable Long id, @RequestBody AssetDTO assetDTO) {
+    public ResponseEntity<String> updateAsset(@PathVariable Long id, @RequestBody AssetDTO assetDTO,Authentication authentication) {
         Asset asset = assetRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Asset not found"));
 
@@ -104,14 +104,15 @@ public class AssetController {
 
         assetRepository.save(asset);
 
+        User user = (User) authentication.getPrincipal();
+
         Log log = new Log();
         log.setAction("update");
         log.setDescription("updated asset: " + asset.getName());
-        log.setAsset(asset);
-
-        User user = new User();
-        user.setId(3L);
+        log.setRecordId(asset.getId());
+        log.setRecordType("asset");
         log.setUser(user);
+
 
         logRepository.save(log);
 
@@ -122,7 +123,7 @@ public class AssetController {
 
     //Deleting
     @DeleteMapping("/{id}")
-    public ResponseEntity<String> deleteAsset(@PathVariable Long id) {
+    public ResponseEntity<String> deleteAsset(@PathVariable Long id,Authentication authentication) {
 
         Asset asset = assetRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Asset not found"));
@@ -131,13 +132,14 @@ public class AssetController {
             return ResponseEntity.notFound().build();
         }
 
+        User user = (User) authentication.getPrincipal();
+
         Log log = new Log();
         log.setAction("delete");
         log.setDescription("deleted asset: " + asset.getName());
-        log.setAsset(asset);
+        log.setRecordId(asset.getId());
+        log.setRecordType("asset");
 
-        User user = new User();
-        user.setId(3L);
         log.setUser(user);
 
         logRepository.save(log);

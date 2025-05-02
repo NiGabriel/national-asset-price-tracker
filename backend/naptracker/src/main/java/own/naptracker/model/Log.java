@@ -20,15 +20,34 @@ public class Log {
     @JoinColumn(name = "user_id")
     private User user;
 
-    @ManyToOne
-    @JoinColumn(name = "asset_id")
-    private Asset asset;
+    @Column(name = "record_id")
+    private Long recordId;
+
+    @Column(name = "record_type")
+    private String recordType;
+
 
     private LocalDateTime timestamp = LocalDateTime.now();
 
 
     //Getters and setters
 
+
+    public Long getRecordId() {
+        return recordId;
+    }
+
+    public void setRecordId(Long recordId) {
+        this.recordId = recordId;
+    }
+
+    public String getRecordType() {
+        return recordType;
+    }
+
+    public void setRecordType(String recordType) {
+        this.recordType = recordType;
+    }
 
     public Long getId() {
         return id;
@@ -60,14 +79,6 @@ public class Log {
 
     public void setUser(User user) {
         this.user = user;
-    }
-
-    public Asset getAsset() {
-        return asset;
-    }
-
-    public void setAsset(Asset asset) {
-        this.asset = asset;
     }
 
     public LocalDateTime getTimestamp() {

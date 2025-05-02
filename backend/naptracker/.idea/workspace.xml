@@ -5,20 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="db6db86d-22bb-4b42-a54c-3f16029ed5ea" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/own/naptracker/config/JwtAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/own/naptracker/config/JwtAuthenticationFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/own/naptracker/config/JwtUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/own/naptracker/config/JwtUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/own/naptracker/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/own/naptracker/controller/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/own/naptracker/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/own/naptracker/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/own/naptracker/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/own/naptracker/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../log.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../log.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../~$log.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../~$log.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../~$stem architecture document national assets price tracker.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../~WRL2344.tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/own/naptracker/controller/AssetController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/own/naptracker/controller/AssetController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/own/naptracker/controller/CategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/own/naptracker/controller/CategoryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/own/naptracker/model/Log.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/own/naptracker/model/Log.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +98,7 @@
       <workItem from="1746170342810" duration="173000" />
       <workItem from="1746170527016" duration="44000" />
       <workItem from="1746170593583" duration="140000" />
-      <workItem from="1746170753467" duration="9596000" />
+      <workItem from="1746170753467" duration="15864000" />
     </task>
     <servers />
   </component>
