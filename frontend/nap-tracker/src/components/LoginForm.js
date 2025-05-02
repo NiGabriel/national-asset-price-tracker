@@ -49,7 +49,7 @@ const LoginForm = () => {
     };
 
     return (
-        <div className="container d-flex align-items-center justify-content-center min-vh-100">
+        <div className="container d-flex align-items-center justify-content-center mt-5">
             <div className="border p-4 shadow rounded w-100" style={{ maxWidth: '400px' }}>
                 <h3 className="text-center mb-4 text-primary">Login to NAP Tracker</h3>
                 {error && <Alert variant="danger">{error}</Alert>}
@@ -83,8 +83,8 @@ const LoginForm = () => {
                     </Button>
 
                     <div className="d-flex justify-content-between mt-3">
-                        <a href="#signup" className="text-decoration-none">Sign up</a>
-                        <a href="#reset" className="text-decoration-none">Forgot password?</a>
+                        <a href="/register" className="text-decoration-none">Sign up</a>
+                        <a href="/request-reset" className="text-decoration-none">Forgot password?</a>
                     </div>
                 </Form>
             </div>

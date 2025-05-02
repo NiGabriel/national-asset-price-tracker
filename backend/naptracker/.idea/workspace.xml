@@ -5,9 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="db6db86d-22bb-4b42-a54c-3f16029ed5ea" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/own/naptracker/controller/AssetController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/own/naptracker/controller/AssetController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/own/naptracker/model/PriceHistory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/own/naptracker/model/PriceHistory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/own/naptracker/config/JwtAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/own/naptracker/config/JwtAuthenticationFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/own/naptracker/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/own/naptracker/controller/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/nap-tracker/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/nap-tracker/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/nap-tracker/src/components/LoginForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/nap-tracker/src/components/LoginForm.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +100,7 @@
       <workItem from="1746170342810" duration="173000" />
       <workItem from="1746170527016" duration="44000" />
       <workItem from="1746170593583" duration="140000" />
-      <workItem from="1746170753467" duration="19908000" />
+      <workItem from="1746170753467" duration="23807000" />
     </task>
     <servers />
   </component>

@@ -161,8 +161,8 @@ public class AuthController {
         userRepository.save(user);
 
         Map<String, String> response = new HashMap<>();
-        response.put("message", "User registered");
-        response.put("totpSecret", secret);
+        response.put("message", "User registered but you have scan the following QR code or visit your email to get the link for creating your 2FA key, otherwise, you can't manage to access the system.");
+//        response.put("totpSecret", secret);
         response.put("qrUrl", qrUrl);
 
         return ResponseEntity.ok(response);
