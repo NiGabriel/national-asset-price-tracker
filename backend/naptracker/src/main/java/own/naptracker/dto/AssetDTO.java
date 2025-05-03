@@ -10,6 +10,10 @@ public class AssetDTO {
     private Long categoryId;
     private LocalDateTime updatedAt;
 
+    private String description;
+
+    private String imageUrl;
+
 
     //Getters and setters
     public String getName() {
@@ -38,5 +42,21 @@ public class AssetDTO {
 
     public void setUpdatedAt(LocalDateTime updatedAt) {
         this.updatedAt = updatedAt;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 }

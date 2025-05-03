@@ -17,8 +17,38 @@ public class Asset {
 
     private BigDecimal price;
 
+    private String trend;
+
+    private String description;
+
+    private String imageUrl;
+
     @Column(name = "updated_at")
     private LocalDateTime updateAt;
+
+    public String getTrend() {
+        return trend;
+    }
+
+    public void setTrend(String trend) {
+        this.trend = trend;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
 
     @ManyToOne
     @JoinColumn(name = "category_id")

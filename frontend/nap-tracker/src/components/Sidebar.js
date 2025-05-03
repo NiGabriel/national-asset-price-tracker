@@ -6,7 +6,7 @@ const Sidebar = ({ onAddAsset }) => (
         <h5>NAP Tracker</h5>
         <ul className="nav flex-column">
             <li className="nav-item my-2">
-                <Link to="/" className="nav-link">Dashboard</Link>
+                <Link to="/dashboard" className="nav-link">Dashboard</Link>
             </li>
             <li className="nav-item my-2">
                 <button className="nav-link" onClick={onAddAsset}>
