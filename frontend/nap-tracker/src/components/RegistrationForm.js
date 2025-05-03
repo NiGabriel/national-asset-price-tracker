@@ -37,7 +37,7 @@ const RegistrationForm = () => {
 
     return (
         <div className="container mt-5" style={{ maxWidth: '500px' }}>
-            <h3 className="mb-3 text-primary">Register New User</h3>
+            {/* <h3 className="mb-3 text-primary">Register New User</h3> */}
             {error && <Alert variant="danger">{error}</Alert>}
             {responseData && (
                 <Alert variant="success">
@@ -71,7 +71,7 @@ const RegistrationForm = () => {
                     </Form.Select>
                 </Form.Group>
 
-                <Button type="submit" className="w-100 btn btn-success">Register</Button>
+                <Button type="submit" className="w-100">Register</Button>
             </Form>
         </div>
     );
